@@ -6,19 +6,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="statue">
-        ANTIQUE STATUE
-        <div id="target">
+    <div class="statue" id="statue">
+    <span class="statueLabel">ANTIQUE STATUE</span>
+    <div id="target"></div>
 
-        </div>
+    <!-- Shown only when statue has .covered -->
+    <div class="coverContent">
+      <h2>Done 🎉</h2>
+      <p>The target area is covered.</p>
+      <button id="restartBtn" type="button">Restart</button>
     </div>
-    <div id="censor">
+  </div>
 
-    </div>
-    <div id="finalCover">
-        <h2>We did it 🎉</h2>
-        <p>The statue is covered!</p>
-    </div>
+  <div id="censor"></div>
 
     <script src="script.js"></script>
 </body>
