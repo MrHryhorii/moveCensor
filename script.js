@@ -24,8 +24,8 @@ censor.style.top = y + "px";
 
 target.style.width = "80px";
 target.style.height = "40px";
-target.style.left = "110px";
-target.style.top = "350px";
+target.style.left = "100px";
+target.style.top = "230px";
 
 // move censor with mouse click
 document.addEventListener("click", (e) => {
@@ -91,6 +91,8 @@ function setPos(nx, ny) {
     y = clamp(ny, 0, maxY);
     censor.style.left = x + "px";
     censor.style.top  = y + "px";
+
+    checkCovered();
 }
 
 document.addEventListener("keydown", (e) => {
@@ -114,7 +116,6 @@ document.addEventListener("keydown", (e) => {
         default: return;
     }
     
-    checkCovered();
 });
 
 // if screen is changed

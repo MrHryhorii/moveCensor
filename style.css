@@ -14,12 +14,22 @@ body {
     position: relative;
     width: 300px;
     height: 500px;
-    background: lightgray;
     border: 2px solid #444;
     color: #000;
     font-weight: bold;
     overflow: hidden;
     font-weight: bold;
+
+    background: lightgray center bottom / auto 100% no-repeat url("VenusCallipyge.jpg");
+}
+
+.statueLabel {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+
+    display: none;
 }
 
 .statue.covered {
@@ -44,13 +54,6 @@ body {
     text-align: center;
     gap: 10px;
     flex-direction: column;
-}
-
-.statueLabel {
-    position: absolute;
-    inset: 0;
-    display: grid;
-    place-items: center;
 }
 
 #restartBtn {
