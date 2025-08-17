@@ -33,11 +33,8 @@ document.addEventListener("click", (e) => {
     {
         x = e.clientX - censor.offsetWidth / 2;
         y = e.clientY - censor.offsetHeight / 2;
-        censor.style.left = x + "px";
-        censor.style.top = y + "px";
+        setPos(x, y);
     }
-
-    checkCovered();
 });
 
 // check if censor fully contains the target
