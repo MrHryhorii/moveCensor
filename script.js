@@ -75,3 +75,47 @@ restartBtn.addEventListener("click", (e) => {
     // goal
     hud.textContent = GOAL_TEXT;
 });
+
+// move by keydown
+const STEP = 16;
+
+function clamp(n, min, max) {
+    return Math.max(min, Math.min(n, max));
+}
+
+// set position and clamp to screen size
+function setPos(nx, ny) {
+    const maxX = window.innerWidth - censor.offsetWidth;
+    const maxY = window.innerHeight - censor.offsetHeight;
+    x = clamp(nx, 0, maxX);
+    y = clamp(ny, 0, maxY);
+    censor.style.left = x + "px";
+    censor.style.top  = y + "px";
+}
+
+document.addEventListener("keydown", (e) => {
+    // Enter — as click on button
+    if (e.key === "Enter") {
+        if (!covered || e.repeat) return;
+
+        e.preventDefault();
+        document.getElementById("restartBtn")?.click();
+        return;
+    }
+
+    // stop check for moving
+    if (covered) return;
+
+    switch (e.key) {
+        case "ArrowUp":    e.preventDefault(); setPos(x, y - STEP); break;
+        case "ArrowDown":  e.preventDefault(); setPos(x, y + STEP); break;
+        case "ArrowLeft":  e.preventDefault(); setPos(x - STEP, y); break;
+        case "ArrowRight": e.preventDefault(); setPos(x + STEP, y); break;
+        default: return;
+    }
+    
+    checkCovered();
+});
+
+// if screen is changed
+window.addEventListener("resize", () => setPos(x, y));
