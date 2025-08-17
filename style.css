@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #eee;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Placeholder statue block */
+.statue {
+  width: 300px;
+  height: 500px;
+  background: lightgray;
+  border: 2px solid #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+/* Movable censor block */
+#censor {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 120px;
+  height: 40px;
+  background: black;
+}
+
+/* Final cover that appears when task is done */
+#finalCover {
+  position: absolute;
+  top: 20%;
+  left: 30%;
+  width: 300px;
+  height: 500px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
