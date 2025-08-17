@@ -3,6 +3,11 @@ const censor = document.getElementById("censor");
 const target = document.getElementById("target");
 const statue = document.querySelector(".statue");
 const restartBtn = document.getElementById("restartBtn");
+const hud = document.getElementById("hud");
+
+// HUD texts
+const GOAL_TEXT = 'Goal: compose “modern art” by placing the black rectangle over the red zone.';
+const DONE_TEXT = 'Goal complete — Exhibit unlocked. Click “Curate Again” to reset.';
 
 // state
 const START_X = 200;
@@ -44,8 +49,11 @@ function checkCovered() {
     {
         covered = true;
         statue.classList.add("covered"); // turn statue black
-        // hide target area
+        // hide target and censor
         target.style.display = "none";
+        censor.style.display = "none";
+        // goal
+        hud.textContent = DONE_TEXT;
     }
 }
 
@@ -61,6 +69,9 @@ restartBtn.addEventListener("click", (e) => {
     y = START_Y;
     censor.style.left = x + "px";
     censor.style.top  = y + "px";
-    // show target area
+    // show target and censor
     target.style.display = "block";
+    censor.style.display = "block";
+    // goal
+    hud.textContent = GOAL_TEXT;
 });

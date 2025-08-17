@@ -64,6 +64,10 @@ body {
     z-index: 100;
 }
 
+#restartBtn:hover {
+    filter: brightness(0.9);
+}
+
 /* target zone that must be covered by the censor */
 #target {
     position: absolute;
@@ -77,3 +81,22 @@ body {
     background: black;
 }
 
+
+#hud {
+    position: fixed;
+    left: 50%;
+    top: 10px;
+    background: rgba(0,0,0,.75);
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 12px;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+.note {
+    opacity: .85;
+    font-size: 14px;
+    max-width: 240px;
+}

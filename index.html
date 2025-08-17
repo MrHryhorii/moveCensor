@@ -2,19 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Movable Censor</title>
+    <title>Museum Jam — Make Modern Art</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="hud">Goal: compose “modern art” by placing the black rectangle over the red zone.</div>
+
     <div class="statue" id="statue">
     <span class="statueLabel">ANTIQUE STATUE</span>
     <div id="target"></div>
 
     <!-- Shown only when statue has .covered -->
     <div class="coverContent">
-      <h2>Done 🎉</h2>
-      <p>The target area is covered.</p>
-      <button id="restartBtn" type="button">Restart</button>
+      <h2>Exhibit Unlocked 🎉</h2>
+      <p>Title: Untitled (Black Rectangle over History)</p>
+      <p class="note">Curator’s note: Expression, framed.</p>
+      <button id="restartBtn" type="button">Curate Again</button>
     </div>
   </div>
 
